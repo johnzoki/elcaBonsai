@@ -1,5 +1,5 @@
 # elcaBonsai
-Importwerkezeug für Projekt- und Ergebnissdateien des [BBSR Bauteileditors in [Bonsai](bonsai.org) 
+Importwerkezeug für Projekt- und Ergebnissdateien des [BBSR Bauteileditors](https://www.bauteileditor.de) in [Bonsai](bonsai.org) 
 
 
 ## Überblick
@@ -9,7 +9,7 @@ Ermöglicht den Import von Projekt- und Ergebnissdateien des BBSR Bauteileditors
 ## Funktionen
 - Laden von Projektdateien  
 - Laden von Massenbilanzen gespeichtet als HTML Seite  
-- Erzeugung und Import von IFC-Materialen und Materialien-Gruppen (IfcMaterial und IfcMaterialLayerSet)
+- Erzeugung und Import von IFC-Materialen und Materialien-Gruppen (IfcMaterial und IfcMaterialLayerSet) mit Ökobaudat Referenzierung
 
 ## Voraussetzungen
 - [Bonsai](https://bonsai.org) Version 0.8.3
@@ -18,7 +18,7 @@ Ermöglicht den Import von Projekt- und Ergebnissdateien des BBSR Bauteileditors
 
 ## Installation
 Installation des elcaBonsai-Werkzeugs erfolgt das Blender-Addon System. 
-Die jeweils letzte Verion kann aus dem Release-Ordner des [elcaBonsai GitHub Repositories] als .zip Datei heruntergeladen werden.
+Die jeweils letzte Verion kann aus dem Release-Ordner des [elcaBonsai GitHub Repositories](https://github.com/jakob-beetz/elcaBonsai/releases/latest) als .zip Datei heruntergeladen werden.
 
 ![](img/elca_addon_install_screen.png)
 
@@ -27,8 +27,11 @@ Wenn das Addon installiert ist, finden sich die beiden folgenden neuen Buttons i
 
 
 ## Schnellstart
-Hertuntergeladene eLCA Projektdateien können über den Button "Import eLCA Projekt" importiert werden.
-Die Massenbilanzen können über den Button "Import eLCA Ergebnis" importiert werden.
+Im Reiter „**Geometry and Materials**“ können aus heruntergeladenen eLCA-Projektdateien über das Panel „**eLCA Integration**“ IFC-Libraries erzeugt werden.
+
+Im Reiter „**Project Overview**“ kann die IFC-Library unter „**Project Setup > Project Library**“ als Custom Library importiert werden, aus der einzelne Materialien dem Projekt hinzugefügt werden können.
+
+Zurück im Reiter „**Geometry and Materials**“ können den ausgewählten Elementen im Panel „**Object Materials**“ die neu hinzugefügten Materialien zugewiesen werden.
 
 
 ## Dokumentation

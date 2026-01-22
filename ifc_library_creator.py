@@ -116,24 +116,22 @@ def create_ifc_library_from_bauteil_elements(bauteil_elements, output_path):
                 for process in lifecycle_processes:
                     process_uuid = process.get('uuid')
                     if process_uuid:
+
                         # Create external reference to Oekobaudat
-                        ext_ref = ifc_file.create_entity("IfcExternalReference",
-                                                        Location=f"https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/{process_uuid}",
-                                                        Identification=process_uuid,
-                                                        Name=process.get('process_name', 'Unknown'))
+
+                        uuid_value = ifc_file.create_entity('IfcIdentifier', process_uuid)
+                        uuid_property = ifc_file.createIfcPropertySingleValue('uuid', 'Uuid form Oekobaudat', uuid_value)
+
+                        extref_value = ifc_file.create_entity('IfcURIReference', f"https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/{process_uuid}")
+                        extref_property = ifc_file.createIfcPropertySingleValue(process.get('process_name', 'Unknown'), 'Link to Oekobaudat', extref_value)
                         
-                        # Create classification reference
-                        classification = ifc_file.create_entity("IfcClassificationReference",
-                                                              Location=ext_ref.Location,
-                                                              Identification=ext_ref.Identification,
-                                                              Name=ext_ref.Name)
-                        
-                        # Associate classification with material
-                        ifc_file.create_entity("IfcRelAssociatesClassification",
-                                              GlobalId=create_guid(),
-                                              OwnerHistory=owner_history,
-                                              RelatedObjects=[material],
-                                              RelatingClassification=classification)
+                        # Create IfcMaterialProperties
+                        pset = ifc_file.create_entity(
+                            "IfcMaterialProperties",
+                            Name = 'pset_oekobaudat',
+                            Material = material,
+                            Properties = [uuid_property, extref_property]
+                        )
             
             # Create material layer
             material_layer = ifc_file.create_entity(

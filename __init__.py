@@ -57,7 +57,7 @@ bl_info = {
     "author": "Jakob Beetz",
     "description": "Integration of eLCA data into Blender Bonsai",
     "blender": (2, 80, 0),
-    "version": (0, 1, 5),
+    "version": (0, 2, 0),
     "location": "Bonsai > GEOMETRY tab > eLCA",
     "warning": "",
     "category": "Generic",

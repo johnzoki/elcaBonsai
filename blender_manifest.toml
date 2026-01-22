@@ -3,7 +3,7 @@ schema_version = "1.0.0"
 # Example of manifest file for a Blender extension
 # Change the values according to your extension
 id = "elca_bonsai"
-version = "1.0.4"
+version = "0.2.0"
 name = "eLCA for Bonsai"
 tagline = "A GUI to interact with the eLCA tool https://bauteileditor.de of the German Federal Research Institute for Building and Urban Structures. Allows import and export of Material configurations for LCA as an extension to Bonsai ( http://bonsai.org  )"
 maintainer = "Jakob Beetz"
